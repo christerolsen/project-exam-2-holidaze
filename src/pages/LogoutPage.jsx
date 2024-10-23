@@ -1,9 +1,9 @@
 import React from "react";
 
-const HomePage = () => (
+const LogoutPage = () => (
   <div>
-    <h1>HomePage</h1>
-    <p>This is Holidaze HomePage.jsx</p>
+    <h1>LogoutPage</h1>
+    <p>This is Holidaze LogoutPage.jsx</p>
     <ul>
       <li>
         <a href="/">Home</a>
@@ -45,4 +45,4 @@ const HomePage = () => (
   </div>
 );
 
-export default HomePage;
+export default LogoutPage;

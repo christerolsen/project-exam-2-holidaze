@@ -1,21 +1,48 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
-function AboutPage() {
-  return (
-    <div>
-      <h1>About us</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
-    </div>
-  );
-}
+const AboutPage = () => (
+  <div>
+    <h1>AboutPAge</h1>
+    <p>This is Holidaze AboutPage.jsx</p>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/venues">Venues</a>
+      </li>
+      <li>
+        <a href="/venues/id">Specific Venue</a>
+      </li>
+      <li>
+        <a href="/venues/confirmation">Booking Confirmation</a>
+      </li>
+      <li>
+        <a href="/venues/create">Create Venue</a>
+      </li>
+      <li>
+        <a href="/venues/edit">Edit Venue</a>
+      </li>
+      <li>
+        <a href="/login">Login</a>
+      </li>
+      <li>
+        <a href="/register">Register</a>
+      </li>
+      <li>
+        <a href="/profile">Profile</a>
+      </li>
+      <li>
+        <a href="/logout">Logout</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+);
 
 export default AboutPage;
