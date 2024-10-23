@@ -9,8 +9,8 @@
   --secondary-color: #50e3c2; /* Minty Green */
   --accent-color: #f5a623; /* Warm Orange */
   --text-color: #333333; /* Black */
-  --background-color: #f7f8fa; /* White */
-  --shadow-color: #1e1e1e80; /* Grey */
+  --background-color: #f7f8fa; /* Light Background */
+  --shadow-color: #1e1e1e80; /* Grey Shadow */
   --info-color: #2d9cdb; /* Info Blue */
   --success-color: #27ae60; /* Success Green */
   --warning-color: #f2994a; /* Warning Orange */
@@ -30,8 +30,46 @@ body {
   min-height: 100vh;
 }
 
+/* Headings - Lato Font with @apply for font-size and line-height */
+h1 {
+  @apply text-h1 font-lato font-bold;
+}
+
+h2 {
+  @apply text-h2 font-lato font-bold;
+}
+
+h3 {
+  @apply text-h3 font-lato font-bold;
+}
+
+h4 {
+  @apply text-h4 font-lato font-bold;
+}
+
+h5 {
+  @apply text-h5 font-lato font-bold;
+}
+
+h6 {
+  @apply text-h6 font-lato font-bold;
+}
+
+/* Body Text - Roboto Font */
+p,
+span {
+  @apply text-body-regular font-roboto;
+}
+
+/* List Styles */
+ul,
+ol {
+  @apply list-disc pl-5;
+}
+
+/* Links */
 a {
-  color: var(--info-color); /* Links use info color */
+  @apply text-info font-roboto;
   text-decoration: none;
 }
 
@@ -39,11 +77,12 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Full-width Button */
 .full-width-button {
   width: 100%;
 }
 
-/* Remove default padding from form elements */
+/* Form Elements */
 input,
 textarea,
 select {
