@@ -1,14 +1,12 @@
 import React from "react";
 
+import Logo from "../../components/Logo";
+
 const Header = () => {
   return (
-    <header>
-      <div>
-        <img
-          src="/assets/logo/holidaze-icon-black.png"
-          alt="Holidaze Logo"
-          className="h-10"
-        />
+    <header className="bg-white shadow-md py-4">
+      <div className="container mx-auto flex justify-between items-center px-4">
+        <Logo variant="main" altText="Holidaze Main Logo" className="h-10" />
       </div>
     </header>
   );
