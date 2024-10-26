@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import mainLogo from "../assets/logo/holidaze-logo-main.png";
-import blackLogo from "../assets/logo/holidaze-logo-black.png";
-import whiteLogo from "../assets/logo/holidaze-logo-white.png";
-import iconWhite from "../assets/logo/holidaze-icon-white.png";
-import iconBlack from "../assets/logo/holidaze-icon-black.png";
+import mainLogo from "../../assets/logo/holidaze-logo-main.png";
+import blackLogo from "../../assets/logo/holidaze-logo-black.png";
+import whiteLogo from "../../assets/logo/holidaze-logo-white.png";
+import iconWhite from "../../assets/logo/holidaze-icon-white.png";
+import iconBlack from "../../assets/logo/holidaze-icon-black.png";
 
 const logoVariants = {
   main: mainLogo,
