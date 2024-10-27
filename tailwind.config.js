@@ -48,6 +48,12 @@ export default {
         "btn-x": "5rem", // Left & right padding
       },
     },
+    screens: {
+      mobile: "350px",
+      tablet: "640px",
+      laptop: "1024px",
+      desktop: "1280px",
+    },
   },
   plugins: [],
   purge: {
