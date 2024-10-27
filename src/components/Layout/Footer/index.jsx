@@ -8,7 +8,7 @@ const Footer = () => {
       <SignatureWave />
 
       {/* Footer Text Positioned at the Bottom */}
-      <p className="absolute w-full text-center bottom-4 left-1/2 transform -translate-x-1/2 text-shadow font-bold font-lato z-10 mobile:text-body-small tablet:text-body-regular laptop:text-h6 desktop:text-h5">
+      <p className="absolute w-full text-center bottom-4 left-1/2 transform -translate-x-1/2 text-shadow font-bold font-lato z-10 text-body-small">
         All rights reserved © 2024 Holidaze
       </p>
     </footer>
