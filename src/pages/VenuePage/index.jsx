@@ -1,9 +1,12 @@
+// src/pages/VenuePage/index.jsx
 import React from "react";
 
-const VenuePage = () => (
-  <div>
-    <h1>VenuePage</h1>
-  </div>
-);
+const VenuePage = () => {
+  return (
+    <div>
+      <h1>Venue</h1>
+    </div>
+  );
+};
 
 export default VenuePage;

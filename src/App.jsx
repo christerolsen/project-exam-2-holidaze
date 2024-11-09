@@ -29,7 +29,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/venues" element={<VenuesPage />} />
-        <Route path="/venues/id" element={<VenuePage />} />
+        <Route path="/venues/:id" element={<VenuePage />} />
         <Route path="/venues/create" element={<VenueCreatePage />} />
         <Route path="/venues/id/edit" element={<VenueEditPage />} />
       </Route>

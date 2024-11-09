@@ -1,8 +1,14 @@
+// src/pages/VenuesPage/index.jsx
 import React from "react";
-import Venues from "../../components/Venues";
+
+import VenuesList from "../../components/Venues/VenuesList";
 
 const VenuesPage = () => {
-  return <Venues />;
+  return (
+    <div>
+      <VenuesList />
+    </div>
+  );
 };
 
 export default VenuesPage;

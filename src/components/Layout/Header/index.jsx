@@ -8,7 +8,7 @@ import HamburgerMenu from "./HamburgerMenu";
 const Header = () => {
   return (
     <header className="relative bg-background shadow-md w-full h-[100px] flex items-center">
-      <div className="w-full flex justify-between items-center mobile:p-4 tablet:p-16 desktop:px-32">
+      <div className="w-full flex justify-around items-center mobile:p-4 tablet:p-16 desktop:px-32">
         <Link to="/">
           <Logo variant="main" altText="Holidaze Logo" className="h-8" />
         </Link>
