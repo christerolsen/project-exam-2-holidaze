@@ -113,4 +113,58 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: var(--shadow-color);
   }
+
+  /* Input Styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  textarea,
+  select {
+    @apply border border-gray-300 rounded-md p-2 w-full font-roboto text-text;
+    transition: border-color 0.2s ease;
+    height: 55px;
+    border-radius: 4px;
+    border-width: 2px;
+  }
+
+  /* Focus and Validation States */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply border-primary;
+    border-color: var(--primary-color);
+  }
+
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    @apply bg-gray-100 cursor-not-allowed;
+  }
+
+  input:invalid,
+  textarea:invalid,
+  select:invalid {
+    @apply border-error;
+    border-color: var(--error-color);
+  }
+
+  /* Button Styling for Consistency */
+  button {
+    @apply font-lato font-bold rounded-lg transition duration-200 focus:outline-none px-btn-x py-btn-y;
+  }
+
+  /* Specific Variants for Button */
+  button.primary {
+    @apply bg-primary text-background hover:bg-background hover:text-primary border border-primary;
+  }
+
+  button.accent {
+    @apply bg-accent text-background hover:bg-background hover:text-accent border border-accent;
+  }
+
+  /* Checkbox and Radio Button Styling */
+  input[type="checkbox"],
+  input[type="radio"] {
+    @apply text-primary focus:ring-primary;
+  }
 }

@@ -1,15 +1,13 @@
 // src/components/Venues/Booking/index.jsx
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Button from "../../Button";
+import { useForm } from "react-hook-form";
 
 const Booking = ({ price, rating = 0, maxGuests }) => {
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
-  const [guests, setGuests] = useState(1);
+  const { register, handleSubmit } = useForm();
 
-  const handleBooking = () => {
-    console.log("Booking details:", { checkInDate, checkOutDate, guests });
+  const onSubmit = (data) => {
+    console.log("Booking details:", data);
   };
 
   return (
@@ -23,46 +21,40 @@ const Booking = ({ price, rating = 0, maxGuests }) => {
         </span>
       </div>
 
-      <div className="mb-m">
-        <label className="block text-body-small mb-xs">Check in</label>
-        <input
-          type="date"
-          value={checkInDate}
-          onChange={(e) => setCheckInDate(e.target.value)}
-          className="border border-gray-300 rounded-md p-2 w-full"
-        />
-      </div>
-      <div className="mb-m">
-        <label className="block text-body-small mb-xs">Check out</label>
-        <input
-          type="date"
-          value={checkOutDate}
-          onChange={(e) => setCheckOutDate(e.target.value)}
-          className="border border-gray-300 rounded-md p-2 w-full"
-        />
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-m">
+        {/* Check-in Date */}
+        <div>
+          <label className="block text-body-small mb-xs">Check in</label>
+          <input type="date" {...register("checkInDate")} />
+        </div>
 
-      <div className="mb-m">
-        <label className="block text-body-small mb-xs">Guests</label>
-        <select
-          value={guests}
-          onChange={(e) => setGuests(Number(e.target.value))}
-          className="border border-gray-300 rounded-md p-2 w-full"
-        >
-          {Array.from({ length: maxGuests }, (_, index) => (
-            <option key={index + 1} value={index + 1}>
-              {index + 1}
-            </option>
-          ))}
-        </select>
-      </div>
+        {/* Check-out Date */}
+        <div>
+          <label className="block text-body-small mb-xs">Check out</label>
+          <input type="date" {...register("checkOutDate")} />
+        </div>
 
-      <p className="text-lg font-bold mt-m">Total amount</p>
-      <p className="text-xl font-bold mb-m">${price * guests}</p>
+        {/* Guests Dropdown */}
+        <div>
+          <label className="block text-body-small mb-xs">Guests</label>
+          <select {...register("guests")}>
+            {Array.from({ length: maxGuests }, (_, index) => (
+              <option key={index + 1} value={index + 1}>
+                {index + 1}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <Button className="full" onClick={handleBooking}>
-        Book now
-      </Button>
+        {/* Total Amount */}
+        <p className="text-lg font-bold mt-m">Total amount</p>
+        <p className="text-xl font-bold mb-m">${price}</p>
+
+        {/* Submit Button */}
+        <button type="submit" className="primary w-full">
+          Book now
+        </button>
+      </form>
     </div>
   );
 };
