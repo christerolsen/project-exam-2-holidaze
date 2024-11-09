@@ -7,7 +7,7 @@ import Button from "../../Button";
 import NoImagePlaceholder from "../../../assets/no-image-placeholder.png";
 
 const VenueCard = ({ venue }) => {
-  const { name, location, price, rating, media } = venue;
+  const { id, name, location, price, rating, media } = venue;
 
   const imageUrl =
     media && media.length > 0 && typeof media[0] === "object"
@@ -41,7 +41,7 @@ const VenueCard = ({ venue }) => {
           <p className="text-lg font-semibold">${price} a night</p>
         </div>
 
-        <Link to="/venues/:id">
+        <Link to={`/venues/${id}`}>
           <Button variant="accent" className="mt-4">
             View more
           </Button>
