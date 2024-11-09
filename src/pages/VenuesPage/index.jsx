@@ -1,9 +1,8 @@
 import React from "react";
+import Venues from "../../components/Venues";
 
-const VenuesPage = () => (
-  <div>
-    <h1>VenuesPage</h1>
-  </div>
-);
+const VenuesPage = () => {
+  return <Venues />;
+};
 
 export default VenuesPage;
