@@ -1,8 +1,15 @@
+// src/components/Button/index.jsx
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const Button = ({ variant, size, disabled, children, onClick }) => {
+const Button = ({
+  variant = "primary",
+  size = "default",
+  disabled = false,
+  children,
+  onClick = () => {},
+}) => {
   const baseStyles =
     "font-lato font-bold rounded-lg transition duration-200 focus:outline-none px-btn-x py-btn-y border border-2 border-background";
   const disabledStyles =
@@ -44,13 +51,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
   onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-  variant: "primary",
-  size: "default",
-  disabled: false,
-  onClick: () => {},
 };
 
 export default Button;

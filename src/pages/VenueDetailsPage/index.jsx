@@ -5,9 +5,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import Loader from "../../components/Loader";
 import { fetchVenueById } from "../../utils/api";
-import ImageGallery from "../../components/Venues/ImageGallery/index.jsx";
-import VenueDetailss from "../../components/Venues/VenueDetails/index.jsx";
-import BookingCards from "../../components/Venues/BookingCard/index.jsx";
+import ImageGallery from "../../components/Venues/ImageGallery";
+import Details from "../../components/Venues/Details";
+import Booking from "../../components/Venues/Booking";
 
 const VenueDetailsPage = () => {
   const { id } = useParams();
@@ -25,27 +25,33 @@ const VenueDetailsPage = () => {
   if (isError)
     return <p className="text-error text-h4">Error loading venue details.</p>;
 
+  const media = venue?.data?.media || [];
+  const name = venue?.data?.name || "Venue";
+
   return (
-    <div className="p-xl bg-background min-h-screen flex flex-col laptop:flex-row gap-l">
-      {/* Left Column: Image Gallery and Venue Details */}
-      <div className="w-full laptop:w-2/3 space-y-l">
-        <ImageGallery media={venue.media} name={venue.name} />
-        <VenueDetailss
-          description={venue.description}
-          maxGuests={venue.maxGuests}
-          location={venue.location}
-          price={venue.price}
-          meta={venue.meta}
-        />
+    <div className="p-xl bg-background flex flex-col gap-l">
+      <div className="w-full mb-l">
+        <ImageGallery media={media} name={name} />
       </div>
 
-      {/* Right Column: Booking Card */}
-      <div className="w-full laptop:w-1/3">
-        <BookingCards
-          price={venue.price}
-          rating={venue.rating}
-          maxGuests={venue.maxGuests}
-        />
+      <div className="w-full flex flex-col laptop:flex-row gap-l">
+        <div className="w-full laptop:w-2/3 space-y-l">
+          <Details
+            description={venue.data.description}
+            maxGuests={venue.data.maxGuests}
+            location={venue.data.location}
+            price={venue.data.price}
+            meta={venue.data.meta}
+          />
+        </div>
+
+        <div className="w-full laptop:w-1/3">
+          <Booking
+            price={venue.data.price}
+            rating={venue.data.rating}
+            maxGuests={venue.data.maxGuests}
+          />
+        </div>
       </div>
     </div>
   );
