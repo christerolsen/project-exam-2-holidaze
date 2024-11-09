@@ -66,6 +66,10 @@
     @apply text-body-regular font-roboto;
   }
 
+  p {
+    @apply pt-4;
+  }
+
   /* List Styles */
   ul,
   ol {
