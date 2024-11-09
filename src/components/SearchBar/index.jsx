@@ -27,7 +27,7 @@ const SearchBar = ({ onSearch }) => {
       {/* Search Button Inside Input */}
       <button
         onClick={handleSearchClick}
-        className="absolute right-0 top-0 h-full bg-blue-500 text-white px-4 rounded-r-md" // No left border radius, fills input height
+        className="absolute right-0 top-0 h-full bg-primary text-white px-4 rounded-r-md hover:bg-accent" // No left border radius, fills input height
       >
         Search
       </button>
