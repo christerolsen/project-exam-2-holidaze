@@ -19,7 +19,7 @@ const HomePage = () => (
 
     <Button variant="accent">+</Button>
 
-    <Button variant="primary" size="mobile:w-full" disabled>
+    <Button variant="primary" disabled>
       +
     </Button>
   </div>
