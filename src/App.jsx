@@ -13,7 +13,7 @@ import ProfilePage from "./pages/ProfilePage";
 import RegisterPage from "./pages/RegisterPage";
 import VenueCreatePage from "./pages/VenueCreatePage";
 import VenueEditPage from "./pages/VenueEditPage";
-import VenuePage from "./pages/VenuePage";
+import VenueDetailsPage from "./pages/VenueDetailsPage";
 import VenuesPage from "./pages/VenuesPage";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/venues" element={<VenuesPage />} />
-        <Route path="/venues/:id" element={<VenuePage />} />
+        <Route path="/venues/:id" element={<VenueDetailsPage />} />
         <Route path="/venues/create" element={<VenueCreatePage />} />
         <Route path="/venues/id/edit" element={<VenueEditPage />} />
       </Route>

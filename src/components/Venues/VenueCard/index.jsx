@@ -1,6 +1,7 @@
 // src/components/VenueCard/index.jsx
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import Button from "../../Button";
 import NoImagePlaceholder from "../../../assets/no-image-placeholder.png";
@@ -40,9 +41,11 @@ const VenueCard = ({ venue }) => {
           <p className="text-lg font-semibold">${price} a night</p>
         </div>
 
-        <Button variant="accent" className="mt-4">
-          View more
-        </Button>
+        <Link to="/venues/:id">
+          <Button variant="accent" className="mt-4">
+            View more
+          </Button>
+        </Link>
       </div>
     </div>
   );
