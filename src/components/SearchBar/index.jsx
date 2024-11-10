@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import Button from "../Button";
+
 const SearchBar = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -14,20 +16,17 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="relative w-full mb-4 laptop:w-[50%]">
-      {/* Search Input */}
+    <div className="relative w-full mb-4 laptop:pr-48">
       <input
         type="text"
         placeholder="Search venues..."
         value={inputValue}
         onChange={handleInputChange}
-        className="border border-gray-300 rounded-l-md p-2 w-full pr-20" // No right border radius
+        className="p-2 w-full pr-20"
       />
-
-      {/* Search Button Inside Input */}
       <button
         onClick={handleSearchClick}
-        className="absolute right-0 top-0 h-full bg-primary text-white px-4 rounded-r-md hover:bg-accent" // No left border radius, fills input height
+        className="absolute right-0 laptop:right-48 top-0 h-full bg-primary text-white px-4 rounded-r-md hover:bg-accent"
       >
         Search
       </button>

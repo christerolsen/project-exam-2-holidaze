@@ -3,12 +3,10 @@ import SignatureWave from "../../SignatureWave";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full mobile:h-[150px] tablet:h-[300px] laptop:h-[450px] desktop:h-[500px] overflow-hidden">
-      <SignatureWave />
-
-      <p className="absolute w-full text-center bottom-4 left-1/2 transform -translate-x-1/2 text-shadow font-bold font-lato z-10 text-body-small">
-        All rights reserved © 2024 Holidaze
-      </p>
+    <footer className="flex flex-col justify-center text-center text-shadow w-full p-8 mt-4 bg-secondary">
+      <p className="w-full">- Made by Christer Olsen</p>
+      <p className="w-full">Powered by Noroff API</p>
+      <p className="w-full">© 2024 Holidaze All rights reserved</p>
     </footer>
   );
 };
