@@ -1,8 +1,8 @@
-import React from "react";
+// src/App.jsx
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
-import BackToTop from "./components/Button/BackToTop";
 
 import AboutPage from "./pages/AboutPage";
 import BookingPage from "./pages/BookingPage";

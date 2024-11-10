@@ -1,9 +1,10 @@
 import React from "react";
+import Container from "../../Container";
 
 const ContactPage = () => (
-  <div>
+  <Container>
     <h1>ContactPage</h1>
-  </div>
+  </Container>
 );
 
 export default ContactPage;

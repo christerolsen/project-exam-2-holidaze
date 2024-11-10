@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
-const RegisterPage = () => (
-  <div>
-    <h1>RegisterPage</h1>
-  </div>
-);
+const RegisterPage = () => {
+  return <div>register</div>;
+};
 
 export default RegisterPage;

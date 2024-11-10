@@ -1,9 +1,10 @@
 import React from "react";
+import Container from "../../Container";
 
 const BookingPage = () => (
-  <div>
+  <Container>
     <h1>BookingPage</h1>
-  </div>
+  </Container>
 );
 
 export default BookingPage;

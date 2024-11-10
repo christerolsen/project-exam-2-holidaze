@@ -1,5 +1,6 @@
-import { getFromLocalStorage } from "./localStorage";
+import { loadFromLocalStorage } from "./localStorage";
 
+// Function to fetch the token from local storage
 export function fetchToken() {
-  return getFromLocalStorage("token");
+  return loadFromLocalStorage("token");
 }
