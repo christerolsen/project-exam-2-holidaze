@@ -21,10 +21,12 @@ const VenuesList = () => {
   if (error) return <p>Error loading venues: {error.message}</p>;
 
   return (
-    <div className="p-4 flex flex-col justify-center items-center">
-      <h1 className="self-start">Venues</h1>
-      <SearchBar onSearch={handleSearch} />
-      <div className="flex flex-wrap justify-center align-center gap-6">
+    <div className="mt-4 p-4 flex flex-col justify-center items-center">
+      <div className="w-full laptop:flex gap-8">
+        <h1 className="mb-4 self-start">Venues</h1>
+        <SearchBar onSearch={handleSearch} />
+      </div>
+      <div className="mt-4 p-4 flex flex-wrap justify-center align-center gap-6">
         {venues.map((venue) => (
           <div key={venue.id} className="flex-grow-0 flex-shrink-0 basis-72">
             {" "}

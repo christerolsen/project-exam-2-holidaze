@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
+import BackToTop from "./components/Button/BackToTop";
 
 import AboutPage from "./pages/AboutPage";
 import BookingPage from "./pages/BookingPage";

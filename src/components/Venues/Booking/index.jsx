@@ -22,19 +22,16 @@ const Booking = ({ price, rating = 0, maxGuests }) => {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-m">
-        {/* Check-in Date */}
         <div>
           <label className="block text-body-small mb-xs">Check in</label>
           <input type="date" {...register("checkInDate")} />
         </div>
 
-        {/* Check-out Date */}
         <div>
           <label className="block text-body-small mb-xs">Check out</label>
           <input type="date" {...register("checkOutDate")} />
         </div>
 
-        {/* Guests Dropdown */}
         <div>
           <label className="block text-body-small mb-xs">Guests</label>
           <select {...register("guests")}>
@@ -46,11 +43,9 @@ const Booking = ({ price, rating = 0, maxGuests }) => {
           </select>
         </div>
 
-        {/* Total Amount */}
         <p className="text-lg font-bold mt-m">Total amount</p>
         <p className="text-xl font-bold mb-m">${price}</p>
 
-        {/* Submit Button */}
         <button type="submit" className="primary w-full">
           Book now
         </button>
