@@ -1,9 +1,11 @@
 import React from "react";
 
+import Container from "../../Container";
+
 const VenueEditPage = () => (
-  <div>
+  <Container>
     <h1>VenueEditPage</h1>
-  </div>
+  </Container>
 );
 
 export default VenueEditPage;

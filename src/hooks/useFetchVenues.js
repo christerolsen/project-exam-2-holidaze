@@ -15,7 +15,6 @@ export const useFetchVenues = (searchQuery = "") => {
       try {
         setLoading(true);
 
-        // Fetch from API with search term if available
         const response = await fetch(
           `${ApiURLs.VENUES}?page=${page}&limit=20&search=${encodeURIComponent(
             searchQuery
@@ -26,9 +25,7 @@ export const useFetchVenues = (searchQuery = "") => {
         }
 
         const data = await response.json();
-        console.log("API Response:", data);
 
-        // Reset or append results based on `page`
         setVenues((prevVenues) => {
           return page === 1 ? data.data : [...prevVenues, ...data.data];
         });

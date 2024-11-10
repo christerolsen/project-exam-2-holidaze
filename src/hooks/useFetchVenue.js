@@ -12,8 +12,8 @@ const fetchVenue = async (id) => {
 
 export const useFetchVenue = (id) => {
   return useQuery({
-    queryKey: ["venue", id], // Pass `queryKey` as an object property
-    queryFn: () => fetchVenue(id), // Pass `queryFn` as an object property
-    enabled: !!id, // Use additional options as needed
+    queryKey: ["venue", id],
+    queryFn: () => fetchVenue(id),
+    enabled: !!id,
   });
 };

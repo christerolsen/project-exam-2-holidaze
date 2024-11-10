@@ -1,9 +1,11 @@
 import React from "react";
 
+import Container from "../../Container";
+
 const AboutPage = () => (
-  <div>
+  <Container>
     <h1>AboutPage</h1>
-  </div>
+  </Container>
 );
 
 export default AboutPage;

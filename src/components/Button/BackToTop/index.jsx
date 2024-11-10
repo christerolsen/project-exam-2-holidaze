@@ -30,7 +30,7 @@ const BackToTop = () => {
   return (
     isVisible && (
       <div style={styles.container}>
-        <Button onClick={scrollToTop}>Back to Top</Button>
+        <Button onClick={scrollToTop}>&uarr; Top</Button>
       </div>
     )
   );
@@ -41,7 +41,7 @@ const styles = {
     position: "fixed",
     bottom: "20px",
     right: "20px",
-    zIndex: 10000, // Higher z-index to ensure it floats above other elements
+    zIndex: 10000,
   },
 };
 

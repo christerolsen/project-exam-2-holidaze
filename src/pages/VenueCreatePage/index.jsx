@@ -1,9 +1,10 @@
 import React from "react";
+import Container from "../../Container";
 
 const VenueCreatePage = () => (
-  <div>
+  <Container>
     <h1>VenueCreatePage</h1>
-  </div>
+  </Container>
 );
 
 export default VenueCreatePage;

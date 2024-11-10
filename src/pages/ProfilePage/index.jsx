@@ -1,9 +1,11 @@
 import React from "react";
 
+import Container from "../../Container";
+
 const ProfilePage = () => (
-  <div>
+  <Container>
     <h1>ProfilePage</h1>
-  </div>
+  </Container>
 );
 
 export default ProfilePage;
