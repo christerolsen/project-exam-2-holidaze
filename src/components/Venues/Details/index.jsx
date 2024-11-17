@@ -1,49 +1,57 @@
-// src/components/Venues/VenueDetails/index.jsx
+// src/components/Venues/Details/index.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "../../Button";
 
 const Details = ({
-  description = "No description available",
+  name,
+  description,
+  location,
   maxGuests,
-  location = {},
   price,
-  meta = {},
+  rating,
+  amenities,
 }) => {
   return (
-    <div className="">
-      <h2 className="text-h2 font-lato mb-s">Venue details</h2>
-      <p className="text-body-medium mb-m">{description}</p>
-
-      <div className="space-y-s">
-        <p className="font-bold">Guest capacity: {maxGuests}</p>
-        <p>Address: {location.address || "N/A"}</p>
-        <p>City: {location.city || "Unknown"}</p>
-        <p>Country: {location.country || "Unknown"}</p>
-        <p>Price: ${price} per night</p>
+    <div className="details p-4">
+      <h1 className="mb-4">{name}</h1>
+      <div className="flex items-center mb-2">
+        {Array.from({ length: 5 }, (_, index) => (
+          <span
+            key={index}
+            className={`text-primary ${
+              index < Math.floor(rating) ? "fill-current" : "text-gray-300"
+            }`}
+          >
+            ★
+          </span>
+        ))}
       </div>
-
-      <h3 className="text-h4 mt-m mb-s">Facilities</h3>
-      <div className="flex flex-wrap gap-s">
-        {meta.wifi && (
-          <span className="bg-secondary text-text font-bold px-s py-xs rounded-lg">
-            WiFi
-          </span>
-        )}
-        {meta.parking && (
-          <span className="bg-secondary text-text font-bold px-s py-xs rounded-lg">
-            Parking
-          </span>
-        )}
-        {meta.breakfast && (
-          <span className="bg-secondary text-tex font-bold px-s py-xs rounded-lg">
-            Breakfast
-          </span>
-        )}
-        {meta.pets && (
-          <span className="bg-secondary text-text font-bold px-s py-xs rounded-lg">
-            Pets
-          </span>
+      <p className="mb-4">{description}</p>
+      <div className="mb-8">
+        <p>
+          <span className="font-bold">Location: </span>{" "}
+          {location.city ? location.city : "N/A"},{" "}
+          {location.country ? location.country : "N/A"}{" "}
+        </p>
+        <p>
+          <span className="font-bold">Guests capacity: </span>
+          {maxGuests}
+        </p>
+        <p>
+          <span className="font-bold">Price: </span>${price} per night
+        </p>
+      </div>
+      <div className="facilities">
+        <h3 className="mb-2">Facilities:</h3>
+        {amenities && Object.keys(amenities).length > 0 ? (
+          Object.keys(amenities).map((amenity) => (
+            <p key={amenity} className="capitalize">
+              <span className="font-bold">{amenity}: </span>
+              {amenities[amenity] ? "Yes" : "No"}
+            </p>
+          ))
+        ) : (
+          <p>No amenities available</p>
         )}
       </div>
     </div>
@@ -51,20 +59,16 @@ const Details = ({
 };
 
 Details.propTypes = {
-  description: PropTypes.string,
-  maxGuests: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   location: PropTypes.shape({
-    address: PropTypes.string,
     city: PropTypes.string,
     country: PropTypes.string,
   }).isRequired,
+  maxGuests: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
-  meta: PropTypes.shape({
-    wifi: PropTypes.bool,
-    parking: PropTypes.bool,
-    breakfast: PropTypes.bool,
-    pets: PropTypes.bool,
-  }),
+  rating: PropTypes.number.isRequired,
+  amenities: PropTypes.object.isRequired,
 };
 
 export default Details;

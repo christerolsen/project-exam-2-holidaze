@@ -21,9 +21,9 @@ export default {
         "body-small": ["14px", { lineHeight: "16.8px" }],
       },
       colors: {
-        primary: "#4A90E2", // Soft blue
+        primary: "#2d9cdb", // Soft blue
         secondary: "#50e3c2", // Minty green
-        accent: "#f5a623", // Warm orange
+        accent: "#E0910E", // Warm orange
         info: "#2D9CDB", // Light blue for info state
         success: "#27AE60", // Green for success state
         warning: "#F2994A", // Soft amber for warnings

@@ -20,10 +20,8 @@ const HomePage = ({ venues, loading, error }) => (
         <Button>Explore!</Button>
       </Link>
     </div>
-    <div className="mt-8">
-      <h2 className="mb-4">Popular venues</h2>
-      <TopRated venues={venues} loading={loading} error={error} />
-    </div>
+    <h2 className="mb-4">Popular venues</h2>
+    <TopRated venues={venues} loading={loading} error={error} />
   </Container>
 );
 

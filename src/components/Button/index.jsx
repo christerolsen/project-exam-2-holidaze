@@ -20,6 +20,8 @@ const Button = ({
       "bg-primary text-background hover:bg-background hover:text-primary hover:border-primary",
     accent:
       "bg-accent text-background hover:bg-background hover:text-accent hover:border-accent",
+    danger:
+      "bg-error text-background hover:bg-background hover:text-error hover:border-error",
   };
 
   const buttonClasses = classNames(
@@ -35,7 +37,7 @@ const Button = ({
 
   return (
     <button
-      type="button"
+      type="submit"
       onClick={onClick}
       disabled={disabled}
       className={buttonClasses}
@@ -46,7 +48,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(["primary", "accent", "disabled"]),
+  variant: PropTypes.oneOf(["primary", "accent", "danger", "disabled"]),
   size: PropTypes.oneOf(["default", "full"]),
   disabled: PropTypes.bool,
   children: PropTypes.node,
