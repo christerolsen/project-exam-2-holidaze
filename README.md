@@ -26,7 +26,7 @@ To take the skills learned over the last two/four(part-time) years and take on a
 
 ### Recources
 
-> [_API Documentaion_](hhttps://docs.noroff.dev/)
+> [_API Documentaion_](https://docs.noroff.dev/)
 
 > [_API Swagger_](https://v2.api.noroff.dev/docs)
 
