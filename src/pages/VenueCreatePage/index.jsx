@@ -1,9 +1,10 @@
 import React from "react";
 import Container from "../../Container";
+import CreateVenueForm from "../../components/Form/CreateVenueForm";
 
 const VenueCreatePage = () => (
   <Container>
-    <h1>VenueCreatePage</h1>
+    <CreateVenueForm />
   </Container>
 );
 

@@ -1,0 +1,33 @@
+/* ImageGallery.css */
+.image-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-image-container {
+  transition: all 0.5s ease-in-out;
+}
+
+.gallery-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.gallery-nav-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-nav-button.left-0 {
+  left: 1rem;
+}
+
+.gallery-nav-button.right-0 {
+  right: 1rem;
+}

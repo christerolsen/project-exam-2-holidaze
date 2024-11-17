@@ -1,21 +1,14 @@
-import React, { useContext } from "react";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import LoginForm from "../../components/Form/LoginForm";
+import Container from "../../Container";
 
-const LoginPage = () => {
+function LoginPage() {
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>
-        Email
-        <input type="email" {...register("email", { required: true })} />
-      </label>
-      <label>
-        Password
-        <input type="password" {...register("password", { required: true })} />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <Container>
+      <h1>Login</h1>
+      <LoginForm />
+    </Container>
   );
-};
+}
 
 export default LoginPage;

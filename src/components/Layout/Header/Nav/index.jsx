@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../../../context/AuthContext";
 
 const Nav = () => {
+  const { user, logout } = useAuth();
+
   return (
     <nav className="flex items-center justify-between w-full">
       {/* Centered Links */}
@@ -26,40 +29,41 @@ const Nav = () => {
         >
           Venues
         </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `text-text text-h6 font-lato font-bold hover:text-primary ${
-              isActive ? "text-primary underline" : ""
-            }`
-          }
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `text-text text-h6 font-lato font-bold hover:text-primary ${
-              isActive ? "text-primary underline" : ""
-            }`
-          }
-        >
-          Contact
-        </NavLink>
       </div>
 
       {/* Log In Link to the Right */}
       <div>
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            `text-text text-h6 font-lato font-bold hover:text-primary ${
-              isActive ? "text-primary underline" : ""
-            }`
-          }
-        >
-          Log in
-        </NavLink>
+        {user ? (
+          <div className="flex space-x-6 mx-auto">
+            <NavLink
+              to="/profile"
+              className={({ isActive }) =>
+                `text-text text-h6 font-lato font-bold hover:text-primary ${
+                  isActive ? "text-primary underline" : ""
+                }`
+              }
+            >
+              Profile
+            </NavLink>
+            <NavLink
+              onClick={logout}
+              className="text-text text-h6 font-lato font-bold hover:text-primary"
+            >
+              Log out
+            </NavLink>
+          </div>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              `text-text text-h6 font-lato font-bold hover:text-primary ${
+                isActive ? "text-primary underline" : ""
+              }`
+            }
+          >
+            Log in
+          </NavLink>
+        )}
       </div>
     </nav>
   );

@@ -6,9 +6,9 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-[100%] items-center">
       <Header />
-      <main className="flex-grow mobile:p-4 tablet:p-16 desktop:px-32">
+      <main className="flex flex-grow justify-center w-full">
         <Outlet />
       </main>
       <Footer />

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import SignatureWave from "../../../SignatureWave";
-
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 

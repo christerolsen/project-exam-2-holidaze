@@ -31,7 +31,7 @@ const VenueDetailsPage = () => {
 
   return (
     <Container>
-      <div className="bg-background flex flex-col gap-l">
+      <div className=" bg-background flex flex-col gap-l">
         <div className="w-full mb-l">
           <ImageGallery media={media} name={name} />
         </div>
