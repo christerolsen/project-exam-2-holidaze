@@ -54,7 +54,16 @@ const MyVenues = () => {
   }
 
   if (venues.length === 0) {
-    return <p>You have no venues.</p>;
+    return (
+      <>
+        <p>You have no venues.</p>
+        <Link to="/venues/create" className="mb-4">
+          <Button variant="primary" type="button">
+            Create Venue
+          </Button>
+        </Link>
+      </>
+    );
   }
 
   return (

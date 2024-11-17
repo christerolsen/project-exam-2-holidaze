@@ -5,7 +5,6 @@ import Container from "../../Container";
 function LoginPage() {
   return (
     <Container>
-      <h1>Login</h1>
       <LoginForm />
     </Container>
   );

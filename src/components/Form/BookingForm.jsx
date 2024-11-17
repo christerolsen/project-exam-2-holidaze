@@ -1,4 +1,3 @@
-// src/components/Form/BookingForm.jsx
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useAuth } from "../../context/AuthContext";
@@ -18,11 +17,15 @@ const bookingSchema = yup.object().shape({
     .required("Number of guests is required"),
 });
 
-const BookingForm = ({ venueId, onBookingSuccess }) => {
+const BookingForm = ({ venueId }) => {
   const { user } = useAuth();
+  const [submissionError, setSubmissionError] = useState("");
+
+  const [successMessage, setSuccessMessage] = useState(""); // New state for success message
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: yupResolver(bookingSchema),
@@ -36,19 +39,29 @@ const BookingForm = ({ venueId, onBookingSuccess }) => {
         dateFrom: formatDate(data.dateFrom),
         dateTo: formatDate(data.dateTo),
       };
-      console.log("POST URL:", "https://v2.api.noroff.dev/holidaze/bookings");
-      console.log("Request Body:", bookingData);
       const response = await createBooking(bookingData);
-      console.log("Response:", response);
-      onBookingSuccess(response);
+
+      // Show success message
+      setSuccessMessage("Your booking was successful!");
+
+      // Reset form fields
+      reset();
     } catch (error) {
       console.error("Error creating booking:", error);
+      setSubmissionError("Failed to create booking. Please try again later.");
     }
   };
 
   return (
     <div className="booking-form-container p-4 bg-white rounded-lg shadow-custom">
       <h3 className="text-xl font-bold mb-4">Book Your Stay</h3>
+      {successMessage && (
+        <p className="text-green-500 font-semibold mb-4">{successMessage}</p>
+      )}
+      {submissionError && (
+        <p className="text-red-500 font-semibold mb-4">{submissionError}</p>
+      )}
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label htmlFor="dateFrom" className="block font-semibold mb-1">
@@ -122,7 +135,6 @@ const BookingForm = ({ venueId, onBookingSuccess }) => {
 
 BookingForm.propTypes = {
   venueId: PropTypes.string.isRequired,
-  onBookingSuccess: PropTypes.func.isRequired,
 };
 
 export default BookingForm;

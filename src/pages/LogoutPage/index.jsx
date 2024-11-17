@@ -1,6 +1,5 @@
 // src/pages/LogoutPage/index.jsx
-import React, { useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
 import Container from "../../Container";
 

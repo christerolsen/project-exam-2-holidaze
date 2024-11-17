@@ -118,57 +118,6 @@
     background-color: var(--shadow-color);
   }
 
-  /* Input Styling */
-  label {
-    @apply text-body-large font-bold;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="date"],
-  input[type="password"],
-  input[type="url"],
-  textarea,
-  select {
-    @apply border border-gray-300 rounded-md p-2 w-full font-roboto text-text;
-    transition: border-color 0.2s ease;
-    height: 55px;
-    border-radius: 4px;
-    border-width: 2px;
-  }
-
-  input[type="checkbox"] {
-    @apply border border-gray-300 rounded-md p-2 font-roboto text-text;
-    height: 55px;
-    width: 25px;
-  }
-
-  /* Focus and Validation States */
-  input:focus,
-  textarea:focus,
-  select:focus {
-    @apply border-primary;
-    border-color: var(--primary-color);
-  }
-
-  input:disabled,
-  textarea:disabled,
-  select:disabled {
-    @apply bg-gray-100 cursor-not-allowed;
-  }
-
-  input:invalid,
-  textarea:invalid,
-  select:invalid {
-    @apply border-error;
-    border-color: var(--error-color);
-  }
-
-  /* Button Styling for Consistency */
-  button {
-    @apply font-lato font-bold rounded-lg transition duration-200 focus:outline-none px-btn-x py-btn-y;
-  }
-
   /* Specific Variants for Button */
   button.primary {
     @apply bg-primary text-background hover:bg-background hover:text-primary border border-primary;

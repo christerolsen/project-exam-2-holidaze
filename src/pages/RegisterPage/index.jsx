@@ -5,7 +5,6 @@ import Container from "../../Container";
 function RegisterPage() {
   return (
     <Container>
-      <h1>Register</h1>
       <RegisterForm />
     </Container>
   );
