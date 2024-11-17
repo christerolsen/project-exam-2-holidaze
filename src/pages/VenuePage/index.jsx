@@ -60,12 +60,7 @@ const VenuePage = () => {
           )}
         </div>
         <div className="">
-          <BookingForm
-            venueId={id}
-            onBookingSuccess={(data) =>
-              console.log("Booking successful:", data)
-            }
-          />
+          <BookingForm venueId={id} />
         </div>
       </div>
     </Container>
